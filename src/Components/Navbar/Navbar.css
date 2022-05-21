@@ -1,0 +1,15 @@
+.navbar-start-css {
+    width: 100% !important;
+}
+
+.navbar-end-css {
+    width: 70% !important;
+}
+
+.dropdown-nav .dropdown-content-nav {
+    right: 10px !important;
+}
+
+.card {
+    position: static !important;
+}

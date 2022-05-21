@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import Headers from './Components/Navbar/Navbar';
+import Home from './Components/Home/Home';
+import LogInPage from './Components/LogInPage/LogInPage';
+import NotFoundPage from './Components/NotFoundPage/NotFoundPage';
+import Secret from './Components/Secret/Secret';
+import SignUpPage from './Components/SignUpPage/SignUpPage';
+import RequireAuth from './RequireAuth';
+import Navbar from './Components/Navbar/Navbar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="App relative">
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/secret' element={<RequireAuth>
+          <Secret />
+        </RequireAuth>} />
+        <Route path='/signup' element={<SignUpPage />} />
+        <Route path='/login' element={<LogInPage />} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Routes>
+    </div >
   );
 }
 
