@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoadingPage from '../LoadingPage/LoadingPage';
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -18,14 +19,19 @@ const LogInPage = () => {
 
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user || gUser);
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
+
     if (gLoading || loading) { return <LoadingPage /> }
 
     let ErrorVariable;
     if (gError || error) { ErrorVariable = <p className='text-red-600 py-4'>{error?.message || gError.message}</p> }
 
-    if (user || gUser) {
-        navigate(from, { replace: true });
-    }
 
     const onSubmit = ({ email, password }) => {
         signInWithEmailAndPassword(email, password)
