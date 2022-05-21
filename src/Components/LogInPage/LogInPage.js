@@ -20,12 +20,11 @@ const LogInPage = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
 
     const [token] = useToken(user || gUser);
-
     useEffect(() => {
         if (token) {
-            navigate(from, { replace: true });
+            return navigate(from, { replace: true });
         }
-    }, [token, from, navigate])
+    }, [token, from, navigate]);
 
     if (gLoading || loading) { return <LoadingPage /> }
 

@@ -7,13 +7,18 @@ import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const logOut = () => {
+        signOut(auth)
+        localStorage.removeItem('accessToken')
+    }
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/secret'>Secret</Link></li>
-        <li><Link to='/'>Item 1</Link></li>
+
         <li><Link to='/'>Item 1</Link></li>
         {user ? <>
-            <li onClick={() => signOut(auth)}>
+            <li><Link to='/deshboard'>DeshBoard</Link></li>
+            <li onClick={() => logOut()}>
                 <a href='/'>Log Out</a>
             </li>
         </> : <li><Link to='/login'>Log In</Link></li>
