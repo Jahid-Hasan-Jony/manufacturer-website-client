@@ -11,6 +11,7 @@ import DeshBoard from './Components/DeshBoard/DeshBoard';
 import MyProfile from './Components/DeshBoard/MyProfile/MyProfile';
 import MyOrders from './Components/DeshBoard/MyOrders/MyOrders';
 import AddReview from './Components/DeshBoard/AddReview/AddReview';
+import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path='/secret' element={<RequireAuth>
           <Secret />
         </RequireAuth>} />
+
         <Route path='/deshboard' element={<RequireAuth>
           <DeshBoard />
         </RequireAuth>}>
@@ -27,6 +29,8 @@ function App() {
           <Route path='myOrders' element={<MyOrders />} />
           <Route path='addReview' element={<AddReview />} />
         </Route>
+
+        <Route path='/myPortfolio' element={<MyPortfolio />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/login' element={<LogInPage />} />
         <Route path='*' element={<NotFoundPage />} />

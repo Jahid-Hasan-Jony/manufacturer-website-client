@@ -14,9 +14,8 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/secret'>Secret</Link></li>
-
-        <li><Link to='/'>Item 1</Link></li>
         {user ? <>
+            <li><Link to='/myPortfolio'>Portfolio</Link></li>
             <li><Link to='/deshboard'>DeshBoard</Link></li>
             <li onClick={() => logOut()}>
                 <a href='/'>Log Out</a>
@@ -25,7 +24,7 @@ const Navbar = () => {
         }
     </>
     return (
-        <div className='container sticky top-0 mx-auto'>
+        <div className='container mx-auto'>
             <div className="navbar w-100 bg-base-100">
                 <div className="navbar-start navbar-start-css flex flex-row-reverse justify-between">
                     <div className="dropdown dropdown-nav">
