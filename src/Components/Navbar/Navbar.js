@@ -13,7 +13,7 @@ const Navbar = () => {
     }
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/secret'>Secret</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
         {user ? <>
             <li><Link to='/myPortfolio'>Portfolio</Link></li>
             <li><Link to='/deshboard'>DeshBoard</Link></li>

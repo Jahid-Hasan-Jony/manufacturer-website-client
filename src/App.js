@@ -12,6 +12,7 @@ import MyProfile from './Components/DeshBoard/MyProfile/MyProfile';
 import MyOrders from './Components/DeshBoard/MyOrders/MyOrders';
 import AddReview from './Components/DeshBoard/AddReview/AddReview';
 import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
+import Blogs from './Components/Blogs/Blogs';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
         </Route>
 
         <Route path='/myPortfolio' element={<MyPortfolio />} />
+        <Route path='/blogs' element={<Blogs />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/login' element={<LogInPage />} />
         <Route path='*' element={<NotFoundPage />} />
