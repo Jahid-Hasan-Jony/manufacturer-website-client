@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ComputerPart = (props) => {
-    const { name, imgURL, description, minQuantity, availableQuantity, price } = props.data
+    const { _id, name, imgURL, description, minQuantity, availableQuantity, price } = props.data
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -15,7 +16,7 @@ const ComputerPart = (props) => {
                 <p className='font-bold'>Description :</p>
                 <p>{description}</p>
                 <div className="card-actions flex justify-center">
-                    <button className="btn btn-wide btn-primary">Buy Now</button>
+                    <Link to={`/purchasePage/${_id}`} className="btn btn-wide btn-primary">Buy Now</Link>
                 </div>
             </div>
         </div>

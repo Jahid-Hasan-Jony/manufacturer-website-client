@@ -3,59 +3,59 @@ import React from 'react';
 const MyPortfolio = () => {
     return (
         <div className='container mx-auto p-8 flex items-center justify-center'>
-            <div class="card w-100 lg:card-side bg-base-100 shadow-2xl">
+            <div className="card w-100 lg:card-side bg-base-100 shadow-2xl">
                 <figure className='p-10'><img className='rounded' src="https://i.ibb.co/1qPMQJP/jn.jpg" alt="Album" /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <h2 className='font-bold'>Full Name : </h2>
-                    <h1 class="text-2xl">Jahid Hasab Jony</h1>
+                    <h1 className="text-2xl">Jahid Hasab Jony</h1>
                     <h2 className='font-bold'>E-mail : </h2>
-                    <h1 class="text-2xl">jahidhasanjony48@gmail.com </h1>
+                    <h1 className="text-2xl">jahidhasanjony48@gmail.com </h1>
                     <h2 className='font-bold'>Education Quality : </h2>
-                    <h1 class="text-2xl">Diploma In Engineering of
-                        <span class="tooltip px-2 text-blue-500 font-bold" data-tip="Computer Science and Teachnology">
+                    <h1 className="text-2xl">Diploma In Engineering of
+                        <span className="tooltip px-2 text-blue-500 font-bold" data-tip="Computer Science and Teachnology">
                             CST
                         </span>
                     </h1>
                     <h2 className='font-bold'>Skills :</h2>
                     <div className='grid md:grid-cols-2'>
                         <div>
-                            <h1 class="text-xl">HTML/CSS</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">HTML/CSS</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">Bootstrap</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">Bootstrap</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">Tailwind CSS</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">Tailwind CSS</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">JavaScript [JS, DOM, ES6]</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">JavaScript [JS, DOM, ES6]</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">React</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">React</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">Firebase</h1><progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">Firebase</h1><progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">Node JS</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">Node JS</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">MongoDB</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">MongoDB</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">Github</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">Github</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                         <div>
-                            <h1 class="text-xl">RegEx</h1>
-                            <progress class="progress progress-primary w-56" value="80" max="100"></progress>
+                            <h1 className="text-xl">RegEx</h1>
+                            <progress className="progress progress-primary w-56" value="80" max="100"></progress>
                         </div>
                     </div >
                     <h2 className='font-bold'>Some of My Projects :</h2>
