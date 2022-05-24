@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from '../../Hooks/useAdmin';
+import auth from '../../firebase.init';
 
 const DeshBoard = () => {
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
+
     return (
         <div className='container mx-auto'>
             <div className='sm:flex justify-between'>
@@ -23,7 +29,9 @@ const DeshBoard = () => {
                         <li><Link to='/deshboard'>My Profile</Link></li>
                         <li><Link to='/deshboard/myOrders'>My Orders</Link></li>
                         <li><Link to='/deshboard/addReview'>Add Review</Link></li>
-                        <li><Link to='/deshboard/makeAdmin'>Make Admin</Link></li>
+                        {admin && <>
+                            <li><Link to='/deshboard/makeAdmin'>Make Admin</Link></li>
+                        </>}
                     </ul>
 
                 </div>

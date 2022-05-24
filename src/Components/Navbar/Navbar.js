@@ -17,6 +17,7 @@ const Navbar = () => {
         {user ? <>
             <li><Link to='/myPortfolio'>Portfolio</Link></li>
             <li><Link to='/deshboard'>DeshBoard</Link></li>
+            <li><Link to='/'>{user.displayName}</Link></li>
             <li onClick={() => logOut()}>
                 <a href='/'>Log Out</a>
             </li>

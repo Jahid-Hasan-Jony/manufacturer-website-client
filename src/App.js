@@ -16,6 +16,7 @@ import PurchasePage from './Components/PurchasePage/PurchasePage';
 import MakeAdminPage from './Components/MakeAdminPage/MakeAdminPage';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import RequireAdmin from './RequireAdmin';
 function App() {
   return (
     <div className="App">
@@ -33,7 +34,11 @@ function App() {
           <Route index element={<MyProfile />} />
           <Route path='myOrders' element={<MyOrders />} />
           <Route path='addReview' element={<AddReview />} />
-          <Route path='makeAdmin' element={<MakeAdminPage />} />
+          <Route path='makeAdmin' element={
+            <RequireAdmin>
+              <MakeAdminPage />
+            </RequireAdmin>
+          } />
         </Route>
 
         <Route path='/myPortfolio' element={<MyPortfolio />} />

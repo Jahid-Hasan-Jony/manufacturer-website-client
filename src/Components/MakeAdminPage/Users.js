@@ -9,10 +9,17 @@ const Users = ({ indexNumber, allUser, refetch }) => {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
-        }).then(res => res.json())
+        }).then(res => {
+            if (res.status === 403) {
+                toast.error('failed to make admin')
+            }
+            return res.json()
+        })
             .then(data => {
-                toast.success("Admin Process has been success")
-                refetch();
+                if (data.modifiedCount > 0) {
+                    toast.success("Admin Process has been success")
+                    refetch();
+                }
             })
     }
     return (

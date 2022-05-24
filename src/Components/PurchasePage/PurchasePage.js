@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
 import LoadingPage from '../LoadingPage/LoadingPage';
 
 const PurchasePage = () => {
     const { id } = useParams()
-    const { isLoading, error, data } = useQuery('orderData', () =>
+    const { isLoading, data } = useQuery('orderData', () =>
         fetch(`http://localhost:5000/data/${id}`).then(res =>
             res.json()
         )
