@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
+import LoadingPage from '../LoadingPage/LoadingPage';
 
 const PurchasePage = () => {
     const { id } = useParams()
@@ -9,6 +10,9 @@ const PurchasePage = () => {
             res.json()
         )
     )
+    if (isLoading) {
+        return <LoadingPage />
+    }
     const { _id, name, imgURL, description, minQuantity, availableQuantity, price } = data
     return (
         <div className='container mx-auto'>

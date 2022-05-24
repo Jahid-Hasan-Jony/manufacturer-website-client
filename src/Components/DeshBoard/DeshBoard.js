@@ -23,6 +23,7 @@ const DeshBoard = () => {
                         <li><Link to='/deshboard'>My Profile</Link></li>
                         <li><Link to='/deshboard/myOrders'>My Orders</Link></li>
                         <li><Link to='/deshboard/addReview'>Add Review</Link></li>
+                        <li><Link to='/deshboard/makeAdmin'>Make Admin</Link></li>
                     </ul>
 
                 </div>

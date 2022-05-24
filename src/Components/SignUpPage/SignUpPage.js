@@ -30,9 +30,8 @@ const SignUpPage = () => {
     if (gError || error || updateError) { ErrorVariable = <p className='text-red-600 py-4'>{error?.message || gError?.message || updateError?.message}</p> }
 
     if (gLoading || loading || updating) { return <LoadingPage /> }
-    console.log('outside token', from)
+
     if (token) {
-        console.log('inside token', from)
         return navigate(from, { replace: true });
     }
 

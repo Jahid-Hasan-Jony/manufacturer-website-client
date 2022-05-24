@@ -13,6 +13,9 @@ import AddReview from './Components/DeshBoard/AddReview/AddReview';
 import MyPortfolio from './Components/MyPortfolio/MyPortfolio';
 import Blogs from './Components/Blogs/Blogs';
 import PurchasePage from './Components/PurchasePage/PurchasePage';
+import MakeAdminPage from './Components/MakeAdminPage/MakeAdminPage';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 function App() {
   return (
     <div className="App">
@@ -30,6 +33,7 @@ function App() {
           <Route index element={<MyProfile />} />
           <Route path='myOrders' element={<MyOrders />} />
           <Route path='addReview' element={<AddReview />} />
+          <Route path='makeAdmin' element={<MakeAdminPage />} />
         </Route>
 
         <Route path='/myPortfolio' element={<MyPortfolio />} />
@@ -38,6 +42,7 @@ function App() {
         <Route path='/login' element={<LogInPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer />
     </div >
   );
 }
