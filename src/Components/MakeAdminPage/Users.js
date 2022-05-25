@@ -16,9 +16,9 @@ const Users = ({ indexNumber, allUser, refetch }) => {
             return res.json()
         })
             .then(data => {
-                if (data.modifiedCount > 0) {
-                    toast.success("Admin Process has been success")
+                if (data.result.modifiedCount > 0) {
                     refetch();
+                    toast.success("Admin Process has been success")
                 }
             })
     }
