@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
-
-export const UserPurchasePage = ({ preloaderData }) => {
+export const UserPurchasePage = ({ preloaderData, refetch }) => {
     const [user] = useAuthState(auth)
 
     const { _id, name, imgURL, description, minQuantity, availableQuantity, price } = preloaderData
@@ -12,7 +11,7 @@ export const UserPurchasePage = ({ preloaderData }) => {
 
     const allDefaultValues = { name: user.displayName, email: user.email, quantity: minQuantity }
 
-    const { register, formState: { errors }, handleSubmit } = useForm({ defaultValues: allDefaultValues });
+    const { register, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues: allDefaultValues });
 
     const navigate = useNavigate()
 
@@ -20,6 +19,7 @@ export const UserPurchasePage = ({ preloaderData }) => {
         orderInfo.id = _id
         orderInfo.productName = name
         orderInfo.productURL = imgURL
+        orderInfo.productPrice = price
         fetch(`http://localhost:5000/orders/${orderInfo.email}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },

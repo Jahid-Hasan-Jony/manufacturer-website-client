@@ -5,7 +5,7 @@ import { UserPurchasePage } from './UsePurchasePage';
 
 const PurchasePage = () => {
     const { id } = useParams()
-    const { data } = useQuery('orderData', () =>
+    const { data, refetch } = useQuery('orderData', () =>
         fetch(`http://localhost:5000/data/${id}`).then(res =>
             res.json()
         )
