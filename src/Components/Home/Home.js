@@ -25,15 +25,23 @@ const Home = () => {
                         {computerParts.slice(0, 6).map(part => <ComputerPart key={part._id} data={part} />)}
                     </div>
                 </section>
+                <section className='py-7 my-12 bg-base-200 rounded-lg'>
+                    <div className="m-7 hero-content flex-col lg:flex-row-reverse">
+                        <img src="https://i.ibb.co/hc2kBGw/clark-young-f-Qx-MGk-YXq-FU-unsplash.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+                        <div>
+                            <h1 className="text-5xl font-bold"><span className='text-orange-500'>Explore our latest</span> price list & Catalogue</h1>
+
+                            <button className="my-6 btn btn-primary text-white">Get Product List</button>
+                        </div>
+                    </div>
+
+                </section>
                 <section>
                     <BusinessSummary />
                 </section>
                 <section>
                     <h1 className='font-bold text-center text-5xl my-3'>Customer Review</h1>
-
                     <AllReview />
-
-
                 </section>
             </div>
             <section>

@@ -22,7 +22,10 @@ const MyOrders = () => {
     }
     return (
         <div>
-            {data.map(item => <Order key={item._id} setCancelOrder={setCancelOrder} refetch={refetch} order={item} />)}
+            <div className='grid md:grid-cols-3'>
+                {data.map(item => <Order key={item._id} setCancelOrder={setCancelOrder} refetch={refetch} order={item} />)}
+            </div>
+
             <div>
                 {cancelOrder && <DeleteModal cancelOrder={cancelOrder} />}
             </div>
