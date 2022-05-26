@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Order = ({ order, setCancelOrder, refetch }) => {
     order.refetch = refetch
-    const { productName, productURL, quantity, productPrice, id } = order
+    const { productName, productURL, quantity, productPrice, _id } = order
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -16,7 +17,7 @@ const Order = ({ order, setCancelOrder, refetch }) => {
                     <p>Quantity : {quantity}</p>
                     <p>Tatal TK : {quantity * productPrice}</p>
                     <div className="card-actions justify-between">
-                        <button className='btn text-white btn-accent'>Payment Now</button>
+                        <Link to={`/deshboard/payment/${_id}`} className='btn text-white btn-accent'>Payment Now</Link>
 
                         <label onClick={() => setCancelOrder(order)} htmlFor="deleteOrder" className='btn text-white btn-error'>Cancel Order</label>
                     </div>
