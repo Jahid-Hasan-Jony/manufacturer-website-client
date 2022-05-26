@@ -20,7 +20,7 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
         orderInfo.productName = name
         orderInfo.productURL = imgURL
         orderInfo.productPrice = price
-        fetch(`http://localhost:5000/orders/${orderInfo.email}`, {
+        fetch(`https://peaceful-chamber-04426.herokuapp.com/orders/${orderInfo.email}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(orderInfo)
@@ -51,7 +51,7 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
             <div>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <h2 className="card-title">Card title!</h2>
+                        <h2 className="card-title">Add Order</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             {/* name */}
                             <div className="form-control w-full max-w-xs">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../../firebase.init';
@@ -8,7 +8,7 @@ import Order from './Order';
 const MyOrders = () => {
     const [user] = useAuthState(auth)
     const { isLoading, data, refetch } = useQuery('orderDataPaid', () =>
-        fetch(`http://localhost:5000/allOrders/${user.email}`, {
+        fetch(`https://peaceful-chamber-04426.herokuapp.com/allOrders/${user.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

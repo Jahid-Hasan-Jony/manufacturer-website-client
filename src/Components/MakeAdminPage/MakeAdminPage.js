@@ -5,7 +5,7 @@ import Users from './Users';
 
 const MakeAdminPage = () => {
     const { isLoading, data, refetch } = useQuery('orderData', () =>
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://peaceful-chamber-04426.herokuapp.com/users`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

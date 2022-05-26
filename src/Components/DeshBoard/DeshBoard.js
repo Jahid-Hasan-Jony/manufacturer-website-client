@@ -31,6 +31,8 @@ const DeshBoard = () => {
                         <li><Link to='/deshboard/addReview'>Add Review</Link></li>
                         {admin && <>
                             <li><Link to='/deshboard/makeAdmin'>Make Admin</Link></li>
+                            <li><Link to='/deshboard/addProduct'>Add Product</Link></li>
+                            <li><Link to='/deshboard/manageProduct'>Manage Product</Link></li>
                         </>}
                     </ul>
 

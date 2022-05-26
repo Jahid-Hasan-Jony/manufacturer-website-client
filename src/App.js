@@ -18,6 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import RequireAdmin from './RequireAdmin';
 import Payment from './Components/DeshBoard/PaymentPage/Payment';
+import Profile from './Components/DeshBoard/MyProfile/Profile';
+import AddProduct from './Components/AddProduct/AddProduct';
+import ManageProduct from './Components/DeshBoard/ManageProduct/ManageProduct';
 function App() {
   return (
     <div className="App">
@@ -33,6 +36,7 @@ function App() {
           <DeshBoard />
         </RequireAuth>}>
           <Route index element={<MyProfile />} />
+          <Route path='edit-profile' element={<Profile />} />
           <Route path='myOrders' element={<MyOrders />} />
           <Route path='payment/:id' element={<Payment />} />
           <Route path='addReview' element={<AddReview />} />
@@ -41,7 +45,19 @@ function App() {
               <MakeAdminPage />
             </RequireAdmin>
           } />
+          <Route path='addProduct' element={
+            <RequireAdmin>
+              <AddProduct />
+            </RequireAdmin>
+          } />
+          <Route path='manageProduct' element={
+            <RequireAdmin>
+              <ManageProduct />
+            </RequireAdmin>
+          } />
         </Route>
+
+
 
         <Route path='/myPortfolio' element={<MyPortfolio />} />
         <Route path='/blogs' element={<Blogs />} />

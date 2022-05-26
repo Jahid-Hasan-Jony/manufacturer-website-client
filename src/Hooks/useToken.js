@@ -3,10 +3,21 @@ import { useEffect, useState } from "react";
 const useToken = user => {
     const [token, setToken] = useState('');
     useEffect(() => {
+        const myProfile = {
+            name: user?.user?.displayName,
+            email: user?.user?.email,
+            number: '',
+            educationQuality: '',
+            address: '',
+            facebook: '',
+            linkedIn: '',
+            github: ''
+        }
         const email = user?.user?.email;
-        const currentUser = { email: email };
+        const currentUser = myProfile;
+        // const currentUser = { email: email };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://peaceful-chamber-04426.herokuapp.com/user/${email}`, {
                 method: "PUT",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(currentUser)

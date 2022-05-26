@@ -4,18 +4,20 @@ import {
     useStripe,
     useElements
 } from '@stripe/react-stripe-js';
+import LoadingPage from '../../LoadingPage/LoadingPage';
 
 const CheckoutForm = ({ paymentInfo }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
+    const [processing, setProcessing] = useState(false);
     const [success, setSuccess] = useState('');
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
-    const { productPrice, name, email } = paymentInfo
+    const { productPrice, name, email, _id } = paymentInfo
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://peaceful-chamber-04426.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -47,8 +49,13 @@ const CheckoutForm = ({ paymentInfo }) => {
         if (error) {
             setCardError(error.message)
         } else { setCardError('') }
+        // poree
         setSuccess('')
-
+        setProcessing(true);
+        console.log(processing)
+        if (processing) {
+            console.log('prooo')
+        }
         //confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -64,12 +71,25 @@ const CheckoutForm = ({ paymentInfo }) => {
         );
         if (intentError) {
             setCardError(intentError?.message)
+            setProcessing(false)
         }
         else {
             setCardError('');
             setTransactionId(paymentIntent.id)
-            console.log(paymentIntent.id)
             setSuccess("Congrats! Your Payment is completed")
+            const payment = {
+                transactionId: paymentIntent.id
+            }
+            fetch(`https://peaceful-chamber-04426.herokuapp.com/payment/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            }).then(res => res.json()).then(data => {
+                setProcessing(false)
+            })
         }
 
     }

@@ -6,7 +6,7 @@ import { UserPurchasePage } from './UsePurchasePage';
 const PurchasePage = () => {
     const { id } = useParams()
     const { data, refetch } = useQuery('orderData', () =>
-        fetch(`http://localhost:5000/data/${id}`).then(res =>
+        fetch(`https://peaceful-chamber-04426.herokuapp.com/data/${id}`).then(res =>
             res.json()
         )
     )

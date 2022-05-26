@@ -11,7 +11,7 @@ import LoadingPage from '../../LoadingPage/LoadingPage';
 const stripePromise = loadStripe('pk_test_51L3KnHCL6NEIQgk1tz6irlwC3IF44SM2cTNG1XP9TLwLfim7QyVlsMfy5z1lg4tDRWQGERVx6GlzSD6uTpcoRjwS00wKdgzkOd');
 const Payment = () => {
     const { id } = useParams()
-    const url = `http://localhost:5000/payment/${id}`
+    const url = `https://peaceful-chamber-04426.herokuapp.com/payment/${id}`
     const { isLoading, data } = useQuery(['payment', id], () =>
         fetch(url, {
             method: 'GET'
