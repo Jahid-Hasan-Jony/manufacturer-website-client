@@ -2,9 +2,9 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-2'>
             <div className='py-3'>
-                <h1 className='text-2xl font-bold py-2'>1. How will you improve the performance of a React Application?</h1>
+                <h1 className='text-2xl font-bold py-3'>1. How will you improve the performance of a React Application?</h1>
                 <p>Here are the steps I will take to improve the performance of React application </p>
                 <ol>
                     <li>1. I will try not to duplicate the code</li>
@@ -15,7 +15,7 @@ const Blogs = () => {
                 </ol>
             </div>
             <div className='py-3'>
-                <h1 className='text-2xl font-bold py-2'>What are the different ways to manage a state in a React application?</h1>
+                <h1 className='text-2xl font-bold py-3'>What are the different ways to manage a state in a React application?</h1>
                 <p>There are four types of state to properly manage in React apps. These are - </p>
                 <ol type='1'>
                     <li>1. Local state.</li>
@@ -29,16 +29,16 @@ const Blogs = () => {
                 </ol>
             </div>
             <div className='py-3'>
-                <h1 className='text-2xl font-bold py-2'>Why you do not set the state directly in React?</h1>
+                <h1 className='text-2xl font-bold py-3'>Why you do not set the state directly in React?</h1>
                 <p>when we update the state of a component all it's children are going to be rendered as well. or our entire component tree rendered.but when our entire component tree is rendered that doesn't mean that the entire DOM is updated. when a component is rendered, we basically get a react element, so that is updating our virtual dom. React will then look at the virtual DOM, it also has a copy of the old virtual DOM, that is why we shouldn't update the state directly</p>
             </div>
             <div className='py-3'>
-                <h1 className='text-2xl font-bold py-2'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
+                <h1 className='text-2xl font-bold py-3'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
                 <p>I will implement filter method for search to find products by name. for doing this implementation we have to follow belows method: </p>
                 <p>const searchingProducts = array.filter(product => product.name == searchingName)</p>
             </div>
             <div className='py-3'>
-                <h1 className='text-2xl font-bold py-2'>What is a unit test? Why should write unit tests?</h1>
+                <h1 className='text-2xl font-bold py-3'>What is a unit test? Why should write unit tests?</h1>
                 <p>Unit test is the process of particular testing of our code what we expect. for the expecting result of our codes and good implem or errorless purpose , we should to write unit tests.A unit test runs some code over a segment of your program checking the input and output. These tests allow developers to check individual areas of a program to see where(and why) errors occur. </p>
             </div>
         </div>

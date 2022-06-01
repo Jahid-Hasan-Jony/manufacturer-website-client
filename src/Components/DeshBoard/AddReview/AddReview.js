@@ -21,7 +21,7 @@ const AddReview = () => {
     }
     return (
         <div>
-            <div>
+            <div className='px-3'>
                 <h1 className='text-center text-4xl font-bold py-3'>Add Review</h1>
                 <div className='flex justify-center'>
                     <form className='w-96' onSubmit={handleSubmit(onSubmit)}>

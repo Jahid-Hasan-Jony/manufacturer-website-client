@@ -15,7 +15,9 @@ const CheckoutForm = ({ paymentInfo }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     const { productPrice, name, email, _id } = paymentInfo
-
+    // const buttonHandler = () => {
+    //     if (processing) { return <LoadingPage /> }
+    // }
     useEffect(() => {
         fetch('https://peaceful-chamber-04426.herokuapp.com/create-payment-intent', {
             method: 'POST',
@@ -32,6 +34,7 @@ const CheckoutForm = ({ paymentInfo }) => {
                 }
             })
     }, [productPrice])
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         if (!stripe || !elements) {
@@ -52,10 +55,6 @@ const CheckoutForm = ({ paymentInfo }) => {
         // poree
         setSuccess('')
         setProcessing(true);
-        console.log(processing)
-        if (processing) {
-            console.log('prooo')
-        }
         //confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -112,7 +111,7 @@ const CheckoutForm = ({ paymentInfo }) => {
                         },
                     }}
                 />
-                <button type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn mt-3 btn-success' type="submit" disabled={!stripe || !clientSecret}>
                     Pay
                 </button>
             </form>

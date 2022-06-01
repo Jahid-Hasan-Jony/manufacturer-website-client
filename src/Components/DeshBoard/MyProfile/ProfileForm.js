@@ -2,10 +2,11 @@ import React from 'react';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import LoadingPage from '../../LoadingPage/LoadingPage';
 
-const ProfileForm = ({ preloaderData }) => {
+const ProfileForm = ({ preloaderData, refetch }) => {
     const navigate = useNavigate()
     const { _id } = preloaderData
     const { register, handleSubmit, reset } = useForm({ defaultValues: preloaderData });
@@ -14,8 +15,10 @@ const ProfileForm = ({ preloaderData }) => {
 
     if (updating) { return <LoadingPage /> }
 
-    const onSubmit = (updateUserInfo) => {
+    const onSubmit = async (updateUserInfo) => {
         const { name } = updateUserInfo
+        await updateProfile({ displayName: name })
+
         fetch(`https://peaceful-chamber-04426.herokuapp.com/updateUser/${_id}`, {
             method: "PATCH",
             headers: { 'content-type': 'application/json' },
@@ -23,7 +26,9 @@ const ProfileForm = ({ preloaderData }) => {
         })
             .then(res => res.json())
             .then(data => {
+                toast.success('Your Profile is updated')
                 reset()
+                refetch()
                 navigate('/deshboard')
             })
 

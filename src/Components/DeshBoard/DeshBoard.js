@@ -27,8 +27,11 @@ const DeshBoard = () => {
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to='/deshboard'>My Profile</Link></li>
-                        <li><Link to='/deshboard/myOrders'>My Orders</Link></li>
-                        <li><Link to='/deshboard/addReview'>Add Review</Link></li>
+                        {!admin && <>
+                            <li><Link to='/deshboard/myOrders'>My Orders</Link></li>
+                            <li><Link to='/deshboard/addReview'>Add Review</Link></li>
+                        </>
+                        }
                         {admin && <>
                             <li><Link to='/deshboard/makeAdmin'>Make Admin</Link></li>
                             <li><Link to='/deshboard/addProduct'>Add Product</Link></li>

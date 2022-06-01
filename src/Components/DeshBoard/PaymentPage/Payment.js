@@ -22,7 +22,7 @@ const Payment = () => {
     return (
         <div>
             <div className='infoProduct'>
-                <div className="card w-3/5 p-2 grid md:grid-cols-2 bg-base-100 shadow-xl">
+                <div className="card md:w-3/5 m-2 p-2 grid md:grid-cols-2 bg-base-100 shadow-xl">
                     <figure><img className='w-2/5' src={productURL} alt={productURL} /></figure>
                     <div className="card-body p-2">
                         <h2 className="card-title">
@@ -35,7 +35,7 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
-            <div className='card m-3 w-96 p-2 bg-base-100 shadow-xl'>
+            <div className='card m-3 md:w-96 p-2 bg-base-100 shadow-xl'>
                 <Elements stripe={stripePromise}>
                     <CheckoutForm paymentInfo={data} />
                 </Elements>

@@ -2,14 +2,14 @@ import React from 'react';
 
 const MyPortfolio = () => {
     return (
-        <div className='container mx-auto p-8 flex items-center justify-center'>
-            <div className="card w-100 lg:card-side bg-base-100 shadow-2xl">
-                <figure className='p-10'><img className='rounded' src="https://i.ibb.co/1qPMQJP/jn.jpg" alt="Album" /></figure>
-                <div className="card-body">
+        <div className='container mx-auto md:p-8 p-3 flex items-center justify-center'>
+            <div className="card w-100 lg:card-side bg-base-100 px-2 shadow-2xl">
+                <figure className='md:p-10 p-2'><img className='rounded' src="https://i.ibb.co/1qPMQJP/jn.jpg" alt="Album" /></figure>
+                <div className="card-body px-1">
                     <h2 className='font-bold'>Full Name : </h2>
                     <h1 className="text-2xl">Jahid Hasab Jony</h1>
                     <h2 className='font-bold'>E-mail : </h2>
-                    <h1 className="text-2xl">jahidhasanjony48@gmail.com </h1>
+                    <h1 className="text-2xl">jahidhasanjony48@gmail.com</h1>
                     <h2 className='font-bold'>Education Quality : </h2>
                     <h1 className="text-2xl">Diploma In Engineering of
                         <span className="tooltip px-2 text-blue-500 font-bold" data-tip="Computer Science and Teachnology">

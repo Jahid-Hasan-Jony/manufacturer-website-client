@@ -20,7 +20,7 @@ const Profile = () => {
         return <LoadingPage />
     }
 
-    return data ? <ProfileForm preloaderData={data} /> : <LoadingPage />
+    return data ? <ProfileForm refetch={refetch} preloaderData={data} /> : <LoadingPage />
 };
 
 export default Profile;

@@ -16,7 +16,7 @@ const MakeAdminPage = () => {
         return <LoadingPage />
     }
     return (
-        <div>
+        <div className='px-3'>
             <h1>Total Users : {data.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -24,7 +24,6 @@ const MakeAdminPage = () => {
                         <tr>
                             <th>SL.</th>
                             <th>E-mail</th>
-                            <th></th>
                             <th></th>
                         </tr>
                     </thead>

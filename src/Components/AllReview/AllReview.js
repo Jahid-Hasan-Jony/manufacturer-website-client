@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import LoadingPage from '../LoadingPage/LoadingPage';
 import Reviews from '../Reviews/Reviews';
@@ -11,9 +11,11 @@ const AllReview = () => {
         return <LoadingPage />
     }
 
+
+
     return (
         <div className='py-4 radius md:py-12 grid md:grid-cols-3'>
-            {data.map(item => <Reviews key={item._id} data={data} />)}
+            {data.map(item => <Reviews refetch={refetch} key={item._id} data={item} />)}
         </div>
     );
 };

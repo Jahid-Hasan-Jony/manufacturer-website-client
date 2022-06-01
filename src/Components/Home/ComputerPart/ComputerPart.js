@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ComputerPart = (props) => {
+    // console.log(props.data)
     const { _id, name, imgURL, description, minQuantity, availableQuantity, price } = props.data
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card border md:w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={imgURL} alt={name} className="rounded-xl" />
             </figure>

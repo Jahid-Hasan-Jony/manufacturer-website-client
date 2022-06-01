@@ -20,6 +20,7 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
         orderInfo.productName = name
         orderInfo.productURL = imgURL
         orderInfo.productPrice = price
+
         fetch(`https://peaceful-chamber-04426.herokuapp.com/orders/${orderInfo.email}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
@@ -32,10 +33,10 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
     }
 
     return (
-        <div className='container flex justify-center mx-auto'>
-            <div className="card w-2/4 m-4 bg-base-100 shadow-xl">
+        <div className='container md:flex item-center justify-center mx-auto'>
+            <div className="card md:w-2/4 md:h-2/4 border my-3 w-100 m-4 bg-base-100 shadow-xl">
                 <div className='lg:flex'>
-                    <figure className="px-10 pt-10">
+                    <figure className="p-10">
                         <img src={imgURL} alt={name} className="rounded-xl" />
                     </figure>
                     <div className="card-body">
@@ -48,8 +49,8 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="card w-96 bg-base-100 shadow-xl">
+            <div className='flex justify-center'>
+                <div className="card w-96 h-100 border my-3 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title">Add Order</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -137,6 +138,8 @@ export const UserPurchasePage = ({ preloaderData, refetch }) => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Order = ({ order, setCancelOrder, refetch }) => {
 
     return (
         <div>
-            <div className="card border m-3 w-96 bg-base-100 shadow-xl">
+            <div className="card border m-3 border md:w-96 bg-base-100 shadow-xl">
                 <figure><img src={productURL} alt={productURL} /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
